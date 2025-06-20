@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Gwapa nga Bebekoy💕</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .hearts-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .heart {
+            position: absolute;
+            color: rgba(255, 182, 193, 0.6);
+            font-size: 20px;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.6; }
+            50% { transform: translateY(-20px) rotate(10deg); opacity: 1; }
+        }
+        
+        .container {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .main-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #d63384;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .message-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideUp 1s ease-out 0.5s forwards;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+        }
+        
+        .message-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #495057;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+        
+        .highlight {
+            color: #d63384;
+            font-weight: 500;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.4em;
+        }
+        
+        .love-button {
+            background: linear-gradient(45deg, #ff6b9d, #d63384);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(214, 51, 132, 0.3);
+            margin: 20px 10px;
+        }
+        
+        .love-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(214, 51, 132, 0.4);
+        }
+        
+        .hearts-container {
+            margin: 30px 0;
+            font-size: 2rem;
+        }
+        
+        .animated-heart {
+            display: inline-block;
+            margin: 0 5px;
+            animation: heartbeat 1.5s ease-in-out infinite;
+            color: #ff6b9d;
+        }
+        
+        .animated-heart:nth-child(2) { animation-delay: 0.2s; }
+        .animated-heart:nth-child(3) { animation-delay: 0.4s; }
+        .animated-heart:nth-child(4) { animation-delay: 0.6s; }
+        .animated-heart:nth-child(5) { animation-delay: 0.8s; }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        .quote {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: #d63384;
+            font-style: italic;
+            margin: 30px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            font-size: 1rem;
+            color: #6c757d;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 2s forwards;
+        }
+        
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        .sparkle {
+            position: absolute;
+            color: #ffd700;
+            font-size: 12px;
+            animation: sparkle 2s ease-in-out infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        
+        @media (max-width: 768px) {
+            .main-title { font-size: 2.5rem; }
+            .message-card { padding: 25px; margin: 20px 10px; }
+            .message-text { font-size: 1.1rem; }
+            .quote { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="hearts-bg" id="heartsBackground"></div>
+    
+    <div class="container">
+        <h1 class="main-title">To My Gwapa nga Bebekoy💖</h1>
+        
+        <div class="message-card">
+            <p class="message-text"> Kani nga message is supposed to be my surprise para sa atoang Monthsarry, but since special ang kada adlaw para nako, akoa nalang e pa basa nimo since imissyou sab hehe.</p>     
+            
+              <p> LABLAB, Every day with you feels like a <span class="highlight">beautiful dream</span> (CHARR HAHAHA)that I never want to wake up from. 
+                Your smile lights up my darkest days, and your laugh is the sweetest melody I've ever heard.
+            </p>
+            
+            <p class="message-text">
+                You are my <span class="highlight">sunshine</span>, my <span class="highlight">moonlight</span>, 
+                and every star in between. Thank you for being the most amazing person in my life and for 
+                loving me just the way I am.
+            </p>
+            
+            <div class="hearts-container">
+                <span class="animated-heart">💕</span>
+                <span class="animated-heart">💖</span>
+                <span class="animated-heart">💝</span>
+                <span class="animated-heart">💗</span>
+                <span class="animated-heart">💕</span>
+            </div>
+            
+            <p class="message-text">
+                I promise to love you more each day, to support your dreams, and to be your 
+                <span class="highlight">forever partner</span> in this beautiful journey called life.
+            </p>
+            
+            <button class="love-button" onclick="showLoveMessage()">Tuploka ni for a surprise! 💕</button>
+            <button class="love-button" onclick="createHeartRain()">Ulan Hearts ni ALEN 💖</button>
+        </div>
+        
+        <div class="quote">
+            "In all the world, there is no heart for me like yours. 
+            In all the world, there is no love for you like mine. ILOVEYOU PALANGGA!" 💕
+        </div>
+        
+        <div class="footer">
+            With all my love, forever and always ✨<br>
+            Your loving boyfriend: Alen Mwua 💕
+        </div>
+    </div>
+    
+    <script>
+        // Create floating hearts background
+        function createFloatingHearts() {
+            const heartsContainer = document.getElementById('heartsBackground');
+            const heartSymbols = ['💕', '💖', '💗', '💝', '💓', '💘'];
+            
+            for (let i = 0; i < 15; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 6 + 's';
+                heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                heartsContainer.appendChild(heart);
+            }
+        }
+        
+        // Show surprise love message
+        function showLoveMessage() {
+            const messages = [
+                "You make my heart skip a beat every single day! 💕",
+                "I fall in love with you more and more each moment! 💖",
+                "You are my favorite notification! 💝",
+                "Thank you for being my happy place! 💗",
+                "You're not just my girlfriend, you're my Everything Langga! 💕",
+                "I love the way you make me feel like I'm the luckiest person alive! 💖"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            alert(randomMessage);
+            
+            // Create sparkles
+            createSparkles();
+        }
+        
+        // Create heart rain effect
+        function createHeartRain() {
+            const container = document.body;
+            const heartSymbols = ['💕', '💖', '💗', '💝', '💓'];
+            
+            for (let i = 0; i < 30; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+                heart.style.position = 'fixed';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = '-50px';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.pointerEvents = 'none';
+                heart.style.zIndex = '1000';
+                heart.style.animation = 'heartRain 3s linear forwards';
+                
+                container.appendChild(heart);
+                
+                setTimeout(() => {
+                    if (heart.parentNode) {
+                        heart.parentNode.removeChild(heart);
+                    }
+                }, 3000);
+            }
+        }
+        
+        // Create sparkle effects
+        function createSparkles() {
+            const container = document.querySelector('.container');
+            
+            for (let i = 0; i < 10; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.innerHTML = '✨';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 2 + 's';
+                
+                container.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    if (sparkle.parentNode) {
+                        sparkle.parentNode.removeChild(sparkle);
+                    }
+                }, 2000);
+            }
+        }
+        
+        // Add heart rain animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes heartRain {
+                to {
+                    transform: translateY(100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize floating hearts when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            createFloatingHearts();
+        });
+        
+        // Add some interactive hover effects
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() < 0.02) { // Small chance on mouse move
+                const sparkle = document.createElement('div');
+                sparkle.innerHTML = '✨';
+                sparkle.style.position = 'fixed';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.fontSize = '12px';
+                sparkle.style.animation = 'sparkle 1s ease-out forwards';
+                sparkle.style.zIndex = '1000';
+                
+                document.body.appendChild(sparkle);
+                
+                setTimeout(() => {
+                    if (sparkle.parentNode) {
+                        sparkle.parentNode.removeChild(sparkle);
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
